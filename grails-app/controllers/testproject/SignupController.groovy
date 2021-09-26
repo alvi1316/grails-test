@@ -2,12 +2,19 @@ package testproject
 
 class SignupController{
 
+    UserService userService
+
     def index(){
 
     }
 
-    def reg(){
-        render "$params.email and $params.password"
+    def registration(){
+        def response = userService.signup(params) 
+        if(response){
+            render "success"
+        }else{
+            render "failed"
+        }
     }
 
 }

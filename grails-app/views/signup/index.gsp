@@ -9,7 +9,7 @@
 
         <div class="container-fluid d-flex justify-content-center align-items-center" style="margin-top: 150px;">
 
-            <form action="reg">
+            <form action="registration">
 
                 <div class="form-group col text-center">
                     <h5>Registration Panel</h5>
