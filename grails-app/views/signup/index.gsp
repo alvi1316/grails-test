@@ -52,13 +52,17 @@
                 </div>
 
                 <div class="form-group form-row align-items-center">
+
                     <div class="col-md-4">
                         <label for="email">Email:</label>
                     </div>
                     <div class="col-md-8">
                         <input id="email" type="email" name="email" required><br>
+                        <small id="emailError" class="text-danger d-none">Email not available</small>
                     </div>
+
                 </div>
+                
 
                 <div class="form-group form-row align-items-center">
                     <div class="col-md-4">
@@ -79,12 +83,15 @@
                 </div>
 
                 <div class="form-group col text-center">
-                    <input type="submit" value="Signup">
+                    <input id="submit" type="submit" value="Signup">
                 </div>
 
             </form>
 
         </div>
+
+        <asset:javascript src="application.js"/>
+        <asset:javascript src="signup.js"/>
 
     </body>
 

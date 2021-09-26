@@ -15,4 +15,13 @@ class UserService {
         }
         return result
     }
+
+    def emailIsAvailable(GrailsParameterMap params){
+        def user = User.findByEmail("$params.email");
+        if(user == null){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
