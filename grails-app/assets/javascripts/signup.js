@@ -4,7 +4,7 @@ $( document ).ready(function() {
 
     $('#email').focusout(function() {  
         
-        $.get( 
+        $.post( 
             "../checkemail/index/", 
             { 
                 email: $("#email").val() 

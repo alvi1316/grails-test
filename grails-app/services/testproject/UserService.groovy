@@ -17,11 +17,20 @@ class UserService {
     }
 
     def emailIsAvailable(GrailsParameterMap params){
-        def user = User.findByEmail("$params.email");
+        def user = User.findByEmail("$params.email")
         if(user == null){
-            return true;
+            return true
         }else{
-            return false;
+            return false
+        }
+    }
+
+    def login(GrailsParameterMap params){
+        def user = User.findByEmailAndPassword("$params.email", "$params.password")
+        if(user == null){
+            return false
+        }else{
+            return true
         }
     }
 }

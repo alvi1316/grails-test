@@ -9,8 +9,8 @@ class SignupController{
     }
 
     def registration(){
-        def response = userService.signup(params) 
-        if(response){
+        def result = userService.signup(params) 
+        if(result){
             render "success"
         }else{
             render "failed"

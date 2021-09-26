@@ -58,7 +58,7 @@
                     </div>
                     <div class="col-md-8">
                         <input id="email" type="email" name="email" required><br>
-                        <small id="emailError" class="text-danger d-none">Email not available</small>
+                        <small id="emailError" class="text-danger d-none">Email already in use</small>
                     </div>
 
                 </div>
