@@ -43,4 +43,9 @@ class UserService {
         def userList = User.getAll()
         return userList
     }
+
+    def getUserByName(String firstName, String lastName){
+        def userList = User.findAllByFirstNameLikeorLastNameLike("%$firstName%", "%$lastName%")
+        return userList
+    }
 }

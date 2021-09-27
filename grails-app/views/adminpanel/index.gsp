@@ -31,7 +31,16 @@
 
                 <div class="col-9">
 
-                    <table>
+                    <div class="row bg-info">
+                        <div class="col-3">
+                            <h1>User List</h1>
+                        </div>
+                        <div class="col-9 text-right">
+                            <input type="text" placeholder="search" id="search">
+                        </div>
+                    </div>
+
+                    <table id="table">
                         <tr>
                             <th>Name</th>
                             <th>Age</th>
@@ -40,14 +49,14 @@
                         </tr>
 
 
-                    <g:each in="${userList}" var="user" status="i">
+                        <g:each in="${userList}" var="user" status="i">
                         <tr>
-                            <th>${user.firstName} ${user.lastName}</th>
-                            <th>${new Date().getYear() - user.dob.getYear()}</th>
-                            <th>${user.email}</th>
-                            <th>${user.phone}</th>
+                            <td>${user.firstName} ${user.lastName}</td>
+                            <td>${new Date().getYear() - user.dob.getYear()}</td>
+                            <td>${user.email}</td>
+                            <td>${user.phone}</td>
                         </tr>
-                    </g:each>
+                        </g:each>
 
                     </table>
                 </div>
@@ -57,6 +66,7 @@
         </div>
 
     <asset:javascript src="application.js"/>
+    <asset:javascript src="adminpanel.js"/>
 
     </body>
 
