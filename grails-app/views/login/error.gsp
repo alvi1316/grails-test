@@ -9,7 +9,7 @@
 
         <div class="container-fluid d-flex justify-content-center align-items-center" style="margin-top: 150px;">
 
-            <form action="login" method="post">
+            <form controller="login" action="login" method="post">
 
                 <div class="form-group col text-center">
                     <h5>Login Panel</h5>

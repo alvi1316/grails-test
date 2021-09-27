@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>User Profile</title>
+        <title>Admin Panel</title>
         <asset:stylesheet src="application.css"/>
     </head>
 
