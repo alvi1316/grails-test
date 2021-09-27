@@ -38,4 +38,9 @@ class UserService {
         def user =  User.findByEmail(email)
         return user
     }
+
+    def getAllUser(){
+        def userList = User.getAll()
+        return userList
+    }
 }

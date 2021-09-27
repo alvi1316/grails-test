@@ -1,10 +1,8 @@
 package testproject
 
-class LoginController{
+class AdminloginController {
 
-    UserService userService
-
-    def index(){
+    def index() {
         if(session["adminEmail"] != null){
             redirect(controller: "adminpanel", action: "index")
         }else if(session["email"] != null){
@@ -20,14 +18,13 @@ class LoginController{
         }
     }
 
-    def login(){
-        def result = userService.login(params)
-        if(result){
-            session["email"] = "$params.email"
-            redirect(controller: "userprofile", action: "index")
+    def adminLogin(){
+        if(params.email == "admin@localhost.local" && params.password == "admin"){
+            session["adminEmail"] = "$params.email"
+            redirect(controller: "adminpanel", action: "index")
         }else{
-            redirect(controller: "login", action: "error")
+            redirect(controller: "adminlogin", action: "error")
         }
     }
-
+    
 }

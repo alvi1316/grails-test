@@ -5,6 +5,9 @@ class UserprofileController {
     UserService userService
 
     def index() {
+        if(session["email"] == null){
+            redirect(controller: "login", action: "index")
+        }
         User user = userService.getUserInfo(session["email"])
         [userInfo: user]
     }
