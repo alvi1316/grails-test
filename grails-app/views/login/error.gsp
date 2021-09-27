@@ -50,7 +50,7 @@
 
                 <div class="form-group form-row">
                     <div class="col-md-12" align="center">
-                        <p>Are you new here?<a href="#">Register Now</a></p>
+                        <p>Are you new here?<a href="/signup/index">Register Now</a></p>
                     </div>
                 </div>                
 

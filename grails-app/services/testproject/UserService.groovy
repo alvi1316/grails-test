@@ -33,4 +33,9 @@ class UserService {
             return true
         }
     }
+
+    def getUserInfo(String email){
+        def user =  User.findByEmail(email)
+        return user
+    }
 }

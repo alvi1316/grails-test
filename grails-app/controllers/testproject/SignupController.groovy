@@ -11,7 +11,7 @@ class SignupController{
     def registration(){
         def result = userService.signup(params) 
         if(result){
-            render "success"
+            redirect(controller: "login", action: "index")
         }else{
             render "failed"
         }
