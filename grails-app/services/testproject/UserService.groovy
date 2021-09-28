@@ -1,10 +1,15 @@
 package testproject
 
 import grails.web.servlet.mvc.GrailsParameterMap
+import java.security.MessageDigest
+import java.security.NoSuchAlgorithmException
 
 class UserService {
 
     def signup(GrailsParameterMap params) {
+        String password = params.password
+        password = md5Hash(password)
+        params.password = password
         User user = new User(params)
         boolean result = false
         if(user.validate()){
@@ -26,6 +31,9 @@ class UserService {
     }
 
     def login(GrailsParameterMap params){
+        String password = params.password
+        password = md5Hash(password)
+        params.password = password
         def user = User.findByEmailAndPassword("$params.email", "$params.password")
         if(user == null){
             return false
@@ -47,5 +55,19 @@ class UserService {
     def getUserByName(String firstName, String lastName){
         def userList = User.findAllByFirstNameLikeorLastNameLike("%$firstName%", "%$lastName%")
         return userList
+    }
+
+    def md5Hash(String str){
+        def md5 = ''
+
+        try {
+            MessageDigest digest = MessageDigest.getInstance('MD5')
+            digest.update(str.bytes, 0, str.length())
+            md5 = new BigInteger(1, digest.digest()).toString(16)
+        } catch (NoSuchAlgorithmException e) {
+            log.error('Error creating MD5 hash', e)
+        }
+
+        return md5
     }
 }
